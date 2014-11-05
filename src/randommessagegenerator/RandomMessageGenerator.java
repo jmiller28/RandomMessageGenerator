@@ -17,17 +17,18 @@ public class RandomMessageGenerator {
         list.add("\"Whoever undertakes to set himself up as a judge of Truth and Knowledge is shipwrecked by the laughter of the gods.\" -- Albert Einstein ");
         list.add("\"Engineering without management is art.\" -- Jeff Johnson");
         list.add("\"There is nothing new under the sun, but there are lots of old things we don't know yet.\" -Ambrose Bierce ");
+        removeDuplicates();
     }
     
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         int hash = 7;
         hash = 41 * hash + Objects.hashCode(this.message);
         return hash;
     }
     
     @Override
-    public boolean equals(Object obj) {
+    public final boolean equals(Object obj) {
         if (obj == null) {
             return false;
         }
@@ -41,27 +42,27 @@ public class RandomMessageGenerator {
         return true;
     }
     
-    public String getRandomMessage() {
+    public final String getRandomMessage() {
         Random random = new Random(System.nanoTime());
         int i = random.nextInt(list.size());
         return list.get(i);
     }
     
-    public void addMessage(String message) {
+    public final void addMessage(String message) {
         list.add(message);
         removeDuplicates();
     }
     
-    public void removeDuplicates() {
+    public final void removeDuplicates() {
         Set<String> set = new HashSet<>(list);
         list = new ArrayList<>(set);
     }
     
-    public void removeMessage(String message) {
+    public final void removeMessage(String message) {
         list.remove(message);
     }
     
-    public int getListCount() {
+    public final int getListCount() {
         int i = list.size();
         return i;
     }
