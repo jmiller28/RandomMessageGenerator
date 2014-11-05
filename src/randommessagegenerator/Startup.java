@@ -14,5 +14,7 @@ public class Startup {
         System.out.println(randomMessageGenerator.getListCount());
         randomMessageGenerator.addMessage("\"A great many people think they are thinking when they are merely rearranging their prejudices.\" -- William James"); 
         System.out.println(randomMessageGenerator.getListCount());
+        randomMessageGenerator.removeMessage("\"A great many people think they are thinking when they are merely rearranging their prejudices.\" -- William James"); 
+        System.out.println(randomMessageGenerator.getListCount());
     }
 }

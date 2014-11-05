@@ -57,6 +57,10 @@ public class RandomMessageGenerator {
         list = new ArrayList<>(set);
     }
     
+    public void removeMessage(String message) {
+        list.remove(message);
+    }
+    
     public int getListCount() {
         int i = list.size();
         return i;
